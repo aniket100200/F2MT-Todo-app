@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles..css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body>
-    
+    <section>
+        <nav>
+            <!-- //this is navigation bar section -->
+            <div id="rocket" class="material-symbols-outlined" style="color: #4EA8DE; font-size: 30px;">
+                rocket
+            </div>
+            <div id="logo"><span style="color: #4EA8DE;">to</span><span style="color: #5E60CE;">do</span></div>
+        </nav>
+        <div
+            style="display: flex; justify-content: center; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px;">
+            <input type="text" placeholder="Search For the Task..."
+                style="padding: 10px; font-size: 20px;background-color: rgb(177, 175, 175);" id="search-value">
+            <button class="material-symbols-outlined" style="font-size: 40px;" id="search-btn">Search</button>
+        </div>
+    </section>
+
+    <section class="main">
+        <form class="input">
+            <input type="text" placeholder="Enter Your To Do List Task" class="task-name" required>
+            <input type="datetime-local" name="datetime" required>
+            <button id="add"><span>add</span> <span class="material-symbols-outlined"
+                    style="border-radius: 50%; border: 1px solid white; font-size: small;">add</span></button>
+
+        </form>
+        <div class="task-body">
+            <div class="row1">
+                <div><span class="todo">To Do</span> <span class="count">0</span></div>
+                <div class="hp"><span class="high-priority">High Priority</span><span class="count">0</span></div>
+            </div>
+            <div class="no-task">
+                <div class="material-symbols-outlined" style="font-size: 150px; color: rgb(61, 61, 61);">description
+                </div>
+                <div>You have no To-do Items As of now</div>
+                <button></button>
+            </div>
+
+            <div class="show-task" style="display: none;flex-direction: column;">
+                <form class="show-task">
+
+                </form>
+            </div>
+            <div class="row2">
+                <div><span class="todo">Started</span> <span class="count">0</span></div>
+                <div><span class="high-priority">High Priority</span><span class="count">0</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column;">
+                <form class="started-task">
+
+                </form>
+            </div>
+
+            <div class="row3">
+                <div><span class="todo">completed</span> <span class="count">0</span></div>
+                <div><span class="high-priority">High Priority</span><span class="count">0</span></div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <form class="completed-task">
+
+                </form>
+            </div>
+        </div>
+
+    </section>
+
     <script src="./script.js"></script>
+
+
+
 </body>
+
 </html>
