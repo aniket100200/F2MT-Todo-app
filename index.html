@@ -12,6 +12,8 @@
 
 <body>
     <section>
+        <marquee m1 style="position: fixed; top: 20px; color: magenta; font-size: 20px;" id="marquee">Filter By Priority
+            is Not Working Because I didn't thought in that way</marquee>
         <nav>
             <!-- //this is navigation bar section -->
             <div id="rocket" class="material-symbols-outlined" style="color: #4EA8DE; font-size: 30px;">
@@ -20,13 +22,23 @@
             <div id="logo"><span style="color: #4EA8DE;">to</span><span style="color: #5E60CE;">do</span></div>
         </nav>
         <div
-            style="display: flex;  justify-content: space-evenly; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px;">
-                <div style="display: flex;  justify-content: center; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px;">
-                    <input type="text" placeholder="Search For the Task..."
+            style="display: flex;  justify-content: space-between; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px; padding-inline: 20px;">
+            <div>
+                <label for="status">Filter By Status</label>
+                <select name="status" id="status">
+                    <option value="0">all</option>
+                    <option value="1">ToDo</option>
+                    <option value="2">Started</option>
+                    <option value="3">Completed</option>
+                </select>
+            </div>
+            <div
+                style="display: flex;  justify-content: center; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px;">
+                <input type="text" placeholder="Search For the Task..."
                     style="padding: 10px; font-size: 20px;background-color: rgb(177, 175, 175);" id="search-value">
                 <button class="material-symbols-outlined" style="font-size: 40px;" id="search-btn">Search</button>
-               
-                </div>
+
+            </div>
             <div>
                 <label for="Priority">Filter By Priority</label>
                 <select name="priority" id="Priority">
@@ -68,7 +80,7 @@
                 <div><span class="high-priority">High Priority</span><span class="count">0</span></div>
             </div>
 
-            <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; flex-direction: column;" class="started-task">
                 <form class="started-task" id="started-task">
 
                 </form>
@@ -78,7 +90,7 @@
                 <div><span class="todo">completed</span> <span class="count">0</span></div>
                 <div><span class="high-priority">High Priority</span><span class="count">0</span></div>
             </div>
-            <div style="display: flex; flex-direction: column;">
+            <div class="completed-task" style="display: flex; flex-direction: column;">
                 <form class="completed-task">
 
                 </form>

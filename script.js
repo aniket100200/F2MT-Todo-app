@@ -227,11 +227,13 @@ searchBtn.addEventListener('click', (e) => {
 });
 
 searchValue.addEventListener('keyup', (e) => {
-    if (!searchValue.value) {
+    if (searchValue.value) {
         let taskList = document.getElementsByClassName("task");
         let inputValue = searchValue.value.toLowerCase(); // Convert the search value to lowercase for case-insensitive comparison
         if (inputValue)
-            for (const key in taskList) {
+            {
+                for (const key in taskList) 
+             {
                 if (taskList.hasOwnProperty(key)) {
                     let taskName = taskList[key].querySelector('.task-name').innerText.toLowerCase(); // Convert task name to lowercase for case-insensitive comparison
                   
@@ -239,7 +241,66 @@ searchValue.addEventListener('keyup', (e) => {
                         taskList[key].style.display = "flex";
                 }
             }
+            }
+       
+    }
+    else{
+        let taskList = document.getElementsByClassName("task");
+        let inputValue = searchValue.value.toLowerCase(); // Convert the search value to lowercase for case-insensitive comparison
+        if (inputValue)
+            {
+                for (const key in taskList) 
+             {
+               
+                    let taskName = taskList[key].querySelector('.task-name').innerText.toLowerCase(); // Convert task name to lowercase for case-insensitive comparison
+                  
+                        // If the task name contains the search value, display the task
+                        taskList[key].style.display = "flex";
+            }
+            } 
     }
 });
 
 
+setTimeout(function(){
+    document.getElementById("marquee").style.display='none';
+},25500);
+
+let filBySt=document.getElementById("status");
+let t1=document.querySelector(".show-task")
+let t2=document.querySelector(".started-task")
+let t3=document.querySelector(".completed-task")
+
+filBySt.addEventListener('change',(e)=>
+{
+  if(parseInt(e.target.value)===1)
+  {
+        console.log("todo");
+        t1.style.display="flex";
+        t2.style.display="none";
+        t3.style.display="none";
+  }
+  else if(e.target.value==="2")
+  {
+    console.log("Started");
+
+    t1.style.display="none";
+    t2.style.display="flex";
+    t3.style.display="none";
+  }
+  else if(e.target.value==="3")
+  {
+    console.log("Completed");
+    t1.style.display="none";
+    t2.style.display="none";
+    t3.style.display="flex";
+  }
+  else
+  {
+    //all
+    t1.style.display="flex";
+    t2.style.display="flex";
+    t3.style.display="flex";
+
+  }
+});
