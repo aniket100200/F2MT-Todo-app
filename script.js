@@ -94,13 +94,7 @@ function toggle() {
 }
 
 let priorityCount = 0;
-form.addEventListener('change', (e) => {
-    formChange(e);
-});
-/*from Change*/
-
-
-function formChange(e) {
+form.addEventListener('change', (e) => {    
     if (e.target.checked) {
         priorityCount++;
         console.log(e.parentNode);
@@ -109,7 +103,13 @@ function formChange(e) {
 
     row1hpCount.innerHTML = `${priorityCount} of ${totalTask}`
     if (priorityCount === 0) row1hpCount.innerHTML = '0';
-    console.log(e.target);
+});
+/*from Change*/
+
+
+function formChange(e) 
+{
+    console.log("Bhag");    
 }
 
 var startedTaskForm = document.querySelector(".started-task")
