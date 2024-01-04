@@ -7,6 +7,9 @@ const form = document.querySelector(".show-task>form");
 const input = document.querySelector(".task-name");
 const row1Count = document.querySelector(".row1 .count");
 const row1hpCount = document.querySelector(".row1 .hp .count");
+
+
+const state={};
 const inputForm = document.querySelector(".input");
 
 addBtn.addEventListener('click', (event) => {
@@ -92,13 +95,12 @@ function toggle() {
 
 let priorityCount = 0;
 form.addEventListener('change', (e) => {
-   formChange(e);
+    formChange(e);
 });
 /*from Change*/
 
 
-function formChange(e) 
-{
+function formChange(e) {
     if (e.target.checked) {
         priorityCount++;
         console.log(e.parentNode);
@@ -195,6 +197,11 @@ function saveTask(task) {
     editBtn.style.display = "inline-block";
 }
 
+showTask.addEventListener('change', (e) => {
+    formChange(e);
+});
+
+
 let searchBtn = document.getElementById("search-btn");
 let searchValue = document.getElementById("search-value");
 
@@ -202,22 +209,35 @@ searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     let taskList = document.getElementsByClassName("task");
     let inputValue = searchValue.value.toLowerCase(); // Convert the search value to lowercase for case-insensitive comparison
-    if(inputValue)
-    for (const key in taskList) {
-        if (taskList.hasOwnProperty(key)) {
-            let taskName = taskList[key].querySelector('.task-name').innerText.toLowerCase(); // Convert task name to lowercase for case-insensitive comparison
-            if (taskName.includes(inputValue)) {
-                // If the task name contains the search value, display the task
-                taskList[key].style.display = "flex";
-            } else {
-                // If the task name does not contain the search value, hide the task
-                taskList[key].style.display = "none";
+    if (inputValue)
+        for (const key in taskList) {
+            if (taskList.hasOwnProperty(key)) {
+                let taskName = taskList[key].querySelector('.task-name').innerText.toLowerCase(); // Convert task name to lowercase for case-insensitive comparison
+                if (taskName.includes(inputValue)) {
+                    // If the task name contains the search value, display the task
+                    taskList[key].style.display = "flex";
+                } else {
+                    // If the task name does not contain the search value, hide the task
+                    taskList[key].style.display = "none";
+                }
             }
         }
-    }
 });
-showTask.addEventListener('change',(e)=>{
-    formChange(e);
+
+searchValue.addEventListener('keyup', (e) => {
+    if (!searchValue.value) {
+        let taskList = document.getElementsByClassName("task");
+        let inputValue = searchValue.value.toLowerCase(); // Convert the search value to lowercase for case-insensitive comparison
+        if (inputValue)
+            for (const key in taskList) {
+                if (taskList.hasOwnProperty(key)) {
+                    let taskName = taskList[key].querySelector('.task-name').innerText.toLowerCase(); // Convert task name to lowercase for case-insensitive comparison
+                  
+                        // If the task name contains the search value, display the task
+                        taskList[key].style.display = "flex";
+                }
+            }
+    }
 });
 
 

@@ -20,17 +20,28 @@
             <div id="logo"><span style="color: #4EA8DE;">to</span><span style="color: #5E60CE;">do</span></div>
         </nav>
         <div
-            style="display: flex; justify-content: center; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px;">
-            <input type="text" placeholder="Search For the Task..."
-                style="padding: 10px; font-size: 20px;background-color: rgb(177, 175, 175);" id="search-value">
-            <button class="material-symbols-outlined" style="font-size: 40px;" id="search-btn">Search</button>
+            style="display: flex;  justify-content: space-evenly; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px;">
+                <div style="display: flex;  justify-content: center; align-items: center; background-color: black; color: white; margin: 10px; width: 100vw; gap: 20px;">
+                    <input type="text" placeholder="Search For the Task..."
+                    style="padding: 10px; font-size: 20px;background-color: rgb(177, 175, 175);" id="search-value">
+                <button class="material-symbols-outlined" style="font-size: 40px;" id="search-btn">Search</button>
+               
+                </div>
+            <div>
+                <label for="Priority">Filter By Priority</label>
+                <select name="priority" id="Priority">
+                    <option value="1">Low</option>
+                    <option value="2">Medium</option>
+                    <option value="3">High</option>
+                </select>
+            </div>
         </div>
     </section>
 
     <section class="main">
         <form class="input">
             <input type="text" placeholder="Enter Your To Do List Task" class="task-name" required>
-            <input type="datetime-local" name="datetime" required>
+            <input type="date" name="datetime" required>
             <button id="add"><span>add</span> <span class="material-symbols-outlined"
                     style="border-radius: 50%; border: 1px solid white; font-size: small;">add</span></button>
 
