@@ -120,7 +120,9 @@ var row2Count = document.querySelector(".row2 .count");
 var row2HpCount = document.querySelectorAll(".row2 .count");
 
 function setTask(ele, time) {
-    setTimeout(function () {
+
+    setTimeout(function () 
+    {
         startedTaskForm.appendChild(ele);
         ++startedCount;
         totalTask--;
